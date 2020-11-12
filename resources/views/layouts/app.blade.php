@@ -1,22 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Curso - Platzi</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Etiquetas meta -->
+    <meta charset="utf-8">
+    <meta name="DC.Language" scheme="RFC1766" content="Spanish">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema web de administrador de usuarios y roles con Laravel 7, interfaz en bootstrap 4.5. Desarrollado por Susana Piñero @susananzth"/>
+    <meta name="keywords" content="Laravel, Laravel 7, bootstrap, bootstrap 4.5, roles, usuarios, admin"/>
+    <meta name="author" content="Susana Piñero Rodríguez" />
+    <meta name="copyright" content="Susana Piñero Rodríguez" />
+    <meta name="reply-to" content="susananzth@gmail.com">
+    <link REV="made" href="mailto:susananzth@gmail.com">
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="43200"/>
+    <meta name="Resource-type" content="Manual">
+    <meta name="DateCreated" content="Sat, 08 July 2020 00:00:00 GMT-5">
+    <meta name="Revisit-after" content="1 days">
+    <meta name="robots" content="ALL">
+    <!-- Título de la página -->
+    <title>CRUD User | SusanaNzth</title>
+    <!-- Ícono -->
+    <link rel="icon" type="image/x-icon" href="{{asset('/img/favicon.ico')}}" />
+    <!-- Fuentes -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="{{asset('/css/normalize.css')}}">
+    <link rel="stylesheet" href="{{asset('/css/theme.css')}}"/>
+    <link rel="stylesheet" href="{{asset('/css/style.css')}}">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body id="page-top">
@@ -255,24 +267,12 @@
       </div>
     </div>
   </div>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-
+  <!-- Bootstrap core JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Third party plugin JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <!-- JS del tema -->
+  <script src="{{ asset('js/scripts.js') }}"></script>
 </body>
-
 </html>
