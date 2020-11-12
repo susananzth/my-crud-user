@@ -41,6 +41,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
+                          <th>ID</th>
                           <th>Name</th>
                           <th>Email</th>
                           <th>Show</th>
@@ -50,6 +51,7 @@
                       </thead>
                       <tfoot>
                         <tr>
+                          <th>ID</th>
                           <th>Name</th>
                           <th>Email</th>
                           <th>Show</th>
@@ -60,21 +62,26 @@
                       <tbody>
                         @forelse ($users as $user)
                           <tr>
+                            <td>{{ $user->id }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
                               <form class="" action="index.html" method="post">
+                                  @csrf
                                   <a class="btn btn-primary" href=""><i class="fa fa-eye"></i></a>
                               </form>
                             </td>
                             <td>
                               <form class="" action="index.html" method="post">
-                                  <a class="btn btn-primary" href=""><i class="fa fa-edit"></i></a>
+                                  @csrf
+                                  <a class="btn btn-warning" href=""><i class="fa fa-edit"></i></a>
                               </form>
                             </td>
                             <td>
-                              <form class="" action="index.html" method="post">
-                                  <a class="btn btn-primary" href=""><i class="fa fa-trash-alt"></i></a>
+                              <form action="{{ route('users.destroy', $user) }}" method="POST">
+                                  @method('DELETE')
+                                  @csrf
+                                  <button class="btn btn-danger" value="Delete" onclick="return confirm('Are you sure you want to delete user?')"><i class="fa fa-trash-alt"></i></button>
                               </form>
                             </td>
                           </tr>

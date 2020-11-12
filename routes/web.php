@@ -22,4 +22,4 @@ Route::delete('/users/{user}', 'UserController@destroy')->name('user.destroy');*
 
 Route::get('/', [UserController::class, 'index']);
 Route::post('users', [UserController::class, 'store']);
-Route::delete('users/{user}', [UserController::class, 'destroy']);
+Route::delete('users/{user}', [UserController::class,'destroy'])->name('users.destroy');
