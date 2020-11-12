@@ -1,8 +1,11 @@
 <?php
+// creo el controlador en la consola con el comando: php artisan make:controller UserController --resource
 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// Llamo el modelo de User.
+use App\User;
 
 class UserController extends Controller
 {
@@ -13,7 +16,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        // Llamo la tabla users utilizando el Modelo User.
+        // Lo Guardo en $users
+        $users = User::latest()->get();
+        // Lo muestro en la vista users.index
+        return view('users.index',[
+          'users' => $users
+        ]);
     }
 
     /**
