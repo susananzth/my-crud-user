@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/* Laravel V3.5 */
+Route::get('/', 'UserController@index');
+Route::post('/users', 'UserController@store')->name('users.store');
+Route::delete('/users/{user}', 'UserController@destroy')->name('user.destroy');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+/* Laravel V8  */
+
+Route::get('/', [UserController::class, 'index']);
+Route::post('users', [UserController::class, 'store']);
+Route::delete('users/{user}', [UserController::class, 'destroy']);
