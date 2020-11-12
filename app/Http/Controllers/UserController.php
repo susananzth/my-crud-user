@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // Llamo el modelo de User.
-use App\User;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -60,11 +60,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        $user->delete();
-        //Luego que elimine, retorno a la vista anterior.
-        return back();
+          //
     }
 
     /**
@@ -96,8 +94,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+      $user->delete();
+      //Luego que elimine, retorno a la vista anterior.
+      return back();
     }
 }
