@@ -14,15 +14,11 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        // Llamo la tabla users utilizando el Modelo User.
-        // Lo Guardo en $users
-        $users = User::latest()->get();
-        // Lo muestro en la vista users.index
-        return view('users.index',[
-          'users' => $users
-        ]);
+      $users = User::all(); // Traigo todos los usuarios de la BD y los guardo en la variable
+      return view('users.index', compact('users')); //Devolvemos la vista con el array que trae los usuarios
     }
 
     /**
