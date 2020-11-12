@@ -43,7 +43,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Utilizo el modelo para crear un nuevo registro
+        User::create([
+          'name' => $request->name,
+          'email' => $request->email,
+          'password' => $request->password,
+        ]);
+        //Luego que guarde, retorno a la vista anterior.
+        return back();
+
     }
 
     /**
@@ -52,9 +60,11 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $user->delete();
+        //Luego que elimine, retorno a la vista anterior.
+        return back();
     }
 
     /**
