@@ -18,8 +18,9 @@ Route::post('/users', 'UserController@store')->name('users.store');
 Route::delete('/users/{user}', 'UserController@destroy')->name('user.destroy');
 
 
-/* Laravel V8  */
+/* Laravel V8
 
 Route::get('/', [UserController::class, 'index']);
 Route::post('users', [UserController::class, 'store']);
 Route::delete('users/{user}', [UserController::class, 'destroy']);
+*/
