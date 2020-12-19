@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+*, html{
+    font-family: 'Montserrat', sans-serif;
+}
 .bg-gradient-primary {
     background-color: #df4ecd;
     background-image: linear-gradient(180deg,#df4eb9 10%,#b722be 100%);
@@ -21,4 +25,7 @@ a {
 }
 .dropdown-item.active, .dropdown-item:active {
     background-color: #df4ecd;
+}
+.table {
+    color: #292929;
 }
